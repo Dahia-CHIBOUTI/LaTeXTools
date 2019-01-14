@@ -1,0 +1,86 @@
+\documentclass{ChDahia}
+
+\begin{document}
+
+\include{page_de_garde}
+\clearpage
+
+\tableofcontents
+
+\chapter*{Introduction}
+\markboth{INTRODUCTION}{INTRODUCTION}
+\addcontentsline{toc}{chapter}{Introduction}
+
+%Quelques éléments sont donnés. Des centaines de documents plus complets sont sur Internet ... \\
+
+\chapter{Équations et Figures}
+
+\section{Faire une équation}
+Ma première équation:
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \vec{\nabla}\cdot(\rho \vec{u}) = 0
+\label{eq:eq1}
+\end{equation}
+
+\section{Citer une équation}
+
+L'équation~\eqref{eq:eq1} traduit ...
+
+Les opérateurs somme, intégrale, produit ... sont pris en charge par \LaTeX{} (Eq.~\eqref{eq:eq2})
+\begin{equation}
+\int_1^{\infty}A dx=\sum_i^4 B_i^4
+\label{eq:eq2}
+\end{equation}
+
+\section{Une matrice ...}
+
+... par exemple pour écrire $A\vec{X}=\vec{b}$
+\begin{equation}
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+\begin{pmatrix}
+X_{1}  \\
+X_{2}  \\
+X_{3}  
+\end{pmatrix}=
+\begin{pmatrix}
+b_{1}  \\
+b_{2}  \\
+b_{3}  
+\end{pmatrix}
+\label{eq:}
+\end{equation}
+
+\section{Inclusion d'une figure}
+
+Voilà comment insérer une figure:
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.30\textwidth]{Logo.png}
+	\caption{Exemple d'une figure}
+	\label{fig:Logo}
+\end{figure}
+
+Et on la cite: comme on peut le voir sur la figure~\ref{fig:Logo}, le logo de l'université est très beau.
+
+\chapter{Introduire des références}
+
+\section{Gestion de la bibliographie}
+
+Elle est gérée généralement dans un fichier indépendant. L'extension est \texttt{.bib}.
+Le logiciel \texttt{Jabref} permet d'éditer facilement le fichier contenant la bibliographie.
+
+\section{Citer la bibliographie}
+D'après~\cite{Bon2009} ou~\cite{Martin2012} ...
+On peut même les citer en même temps: d'après~\cite{Bon2009,Martin2012} ...
+
+\bibliographystyle{abbrv-fr}
+\bibliography{biblio}
+\addcontentsline{toc}{chapter}{Références}
+\markboth{R\'EF\'ERENCES}{R\'EF\'ERENCES}
+
+
+\end{document}
